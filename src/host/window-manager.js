@@ -40,7 +40,7 @@ class WindowManager {
       height,
       backgroundColor,
       webPreferences: {
-        preload: join(__dirname, "preload.js"),
+        // preload: join(__dirname, "preload.js"),
         contextIsolation: false,
         nodeIntegration: true
       },

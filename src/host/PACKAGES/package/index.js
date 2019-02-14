@@ -8,4 +8,14 @@ function activate(context) {
   // context.registerPackage("HELLO!!!");
 }
 
-module.exports = activate;
+class Foo {
+  bar() {
+    console.log("bar");
+  }
+}
+
+function foo() {
+  return Foo;
+}
+
+module.exports = foo;
