@@ -14,7 +14,7 @@ export default class App extends Component {
     return (
       <>
         <div>Hello {store.value}</div>
-        <button onClick={()=>store.setValue('World!!!')}>CLICK</button>
+        <button onClick={() => store.loadPackage()}>LOAD PACKAGE</button>
       </>
     );
   }

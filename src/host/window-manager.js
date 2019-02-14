@@ -39,6 +39,11 @@ class WindowManager {
       width,
       height,
       backgroundColor,
+      webPreferences: {
+        preload: join(__dirname, "preload.js"),
+        contextIsolation: false,
+        nodeIntegration: true
+      },
       show: false,
       icon:
         process.platform === "linux" &&
