@@ -1,21 +1,13 @@
-const PackageView = require("./component");
+const PackageView = require("./component").PackageView;
 
-function activate(context) {
-  console.log("[NODE] CTX:", context);
-  console.log(typeof context);
-  // const win = context.win;
-  // win.addPackage({ view: PackageView });
-  // context.registerPackage("HELLO!!!");
-}
+module.exports = {
+  disposables: null,
 
-class Foo {
-  bar() {
-    console.log("bar");
-  }
-}
+  activate: ctx => {
+    // тут подписки
+    console.log(ctx);
+    ctx.registerPackage(PackageView);
+  },
 
-function foo() {
-  return Foo;
-}
-
-module.exports = foo;
+  deactivate: ctx => {}
+};

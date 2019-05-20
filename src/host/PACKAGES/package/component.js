@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-export default class PackageView extends Component {
+export class PackageView extends Component {
   render() {
-    return <div>PACKAGE VIEW!!!</div>;
+    return <div style={{ backgroundColor: "yellow" }}>PACKAGE VIEW!!!</div>;
   }
 }

@@ -3,7 +3,7 @@ const { remote } = window.require("electron");
 import { observable, action, computed, transaction, toJS, set } from "mobx";
 
 class Store {
-  @observable packages = [];
+  @observable.ref packages = [];
 
   @observable value = "";
 
@@ -14,7 +14,7 @@ class Store {
 
   @action.bound
   registerPackage(pack) {
-    console.log("REGISTERING PACKAGE:", pack);
+    this.packages = [...this.packages, pack];
   }
 
   @action.bound
@@ -26,10 +26,17 @@ class Store {
     // const path = remote.require("path");
     // console.log(path.dirname("/home/igor/.bashrc"));
 
-    const foo = remote.require("./PACKAGES/package");
-    const Foo = foo();
-    const inst = new Foo();
-    inst.bar();
+    // const foo = remote.require("./PACKAGES/package");
+    // const Foo = foo();
+    // const inst = new Foo();
+    // inst.bar();
+    // const Foo = window.require("./PACKAGES/package");
+    // console.log(Foo);
+    // const foo = new Foo();
+    // foo.bar();
+
+    const plugin = window.require("./PACKAGES/package");
+    plugin.activate(this);
   }
 }
 

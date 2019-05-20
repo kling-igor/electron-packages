@@ -15,6 +15,11 @@ export default class App extends Component {
       <>
         <div>Hello {store.value}</div>
         <button onClick={() => store.loadPackage()}>LOAD PACKAGE</button>
+        <>
+          {store.packages.map((Item, i) => (
+            <Item key={i} />
+          ))}
+        </>
       </>
     );
   }
